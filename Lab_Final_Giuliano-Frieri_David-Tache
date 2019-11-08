@@ -1,0 +1,30 @@
+package lab_final_giuliano.frieri_david.tache;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author gfrieri & Tached
+ */
+public class Lab_Final_GiulianoFrieri_DavidTache {
+
+    public static void main(String[] args) {
+        int n1, n2;
+        String nombre, menu;
+        
+        JOptionPane.showMessageDialog(null,"Hola Bienvenido al menú iterativo");
+        nombre = JOptionPane.showInputDialog("Escribe tu nombre");
+        String [] op = {"1. Triqui", "2. Punto y fama", "3. Funciones trigonométricas", "4. Clave de un número", "5. Salir"};
+        menu = (String)JOptionPane.showInputDialog(null, "¿A qué opción del menú desea acceder?", "Menú iterativo", JOptionPane.QUESTION_MESSAGE,null, op,null);
+        System.out.println(menu);
+         
+        
+        
+        
+        n1=Integer.parseInt(JOptionPane.showInputDialog(nombre+ " Digita el primer número:"));
+        n2=Integer.parseInt(JOptionPane.showInputDialog(nombre+ " Digita el segundo número:"));
+        JOptionPane.showMessageDialog(null,"La suma es: "+(n1+n2));
+        JOptionPane.showMessageDialog(null,"Gracias por utilizar este programa");
+    }
+    
+}
