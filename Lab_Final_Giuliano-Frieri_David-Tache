@@ -661,6 +661,9 @@ public class Lab_Final_GiulianoFrieri_DavidTache {
                     if (cos >= -1 && cos <= 1) {
                         JOptionPane.showMessageDialog(null, "La tangente de " + x + "° es igual a infinito");
                     } else {
+                        if (sen >= -1 && sen <= 1) {
+                            JOptionPane.showMessageDialog(null, "La tangente de " + x + "° es igual a 0");
+                        }
                         JOptionPane.showMessageDialog(null, "La tangente de " + x + "° es igual a " + tan);
                     }
                 }
@@ -683,6 +686,9 @@ public class Lab_Final_GiulianoFrieri_DavidTache {
                     if (sen >= -1 && sen <= 1) {
                         JOptionPane.showMessageDialog(null, "La cotangente de " + x + "° es igual a infinito");
                     } else {
+                        if (cos >= -1 && cos <= 1) {
+                            JOptionPane.showMessageDialog(null, "La cotangente de " + x + "° es igual a 0");
+                        }
                         JOptionPane.showMessageDialog(null, "La cotangente de " + x + "° es igual a " + cot);
                     }
 
