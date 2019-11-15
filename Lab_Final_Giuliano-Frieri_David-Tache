@@ -9,51 +9,16 @@ import javax.swing.JOptionPane;
 public class Lab_Final_GiulianoFrieri_DavidTache {
 
     public static void main(String[] args) {
-        int n1, n2;
-        String nombre, menu;
-        
-        JOptionPane.showMessageDialog(null,"Hola Bienvenido al menú iterativo");
-        nombre = JOptionPane.showInputDialog("Escribe tu nombre");
-        String [] op = {"1. Triqui", "2. Punto y fama", "3. Funciones trigonométricas", "4. Clave de un número", "5. Salir"};
-        menu = (String)JOptionPane.showInputDialog(null, "¿A qué opción del menú desea acceder?", "Menú iterativo", JOptionPane.QUESTION_MESSAGE,null, op,null);
-        System.out.println(menu);
-         
-        
-        
-        
-        n1=Integer.parseInt(JOptionPane.showInputDialog(nombre+ " Digita el primer número:"));
-        n2=Integer.parseInt(JOptionPane.showInputDialog(nombre+ " Digita el segundo número:"));
-        JOptionPane.showMessageDialog(null,"La suma es: "+(n1+n2));
-        JOptionPane.showMessageDialog(null,"Gracias por utilizar este programa");
-    }
-    
-}
-
-(codigo "nuevo")
-
-
-package lab_final_giuliano.frieri_david.tache;
-
-import java.util.Scanner;
-import javax.swing.JOptionPane;
-
-/**
- *
- * @author gfrieri & Tached
- */
-public class Lab_Final_GiulianoFrieri_DavidTache {
-
-    public static void main(String[] args) {
-        int tutal, posp1, posp2;
-        String nombre, nn1, nn2, menu;
-        Scanner ll = new Scanner(System.in);
-        JOptionPane.showMessageDialog(null, "Hola... Bienvenido al menú iterativo!", "MENÚ", 1);
-        JOptionPane.showMessageDialog(null, "Hay varias opciones actualmente y estamos trabajando en más!");
-        nombre = JOptionPane.showInputDialog("Escribe tu nombre por favor");
+    String nombre, menu, nn1, nn2;
+        int tutal;
+        JOptionPane.showMessageDialog(null, " Hola... Bienvenido al menú iterativo!\n **Creadores: Giuliano Frieri y David Tache.** ");
+        nombre = JOptionPane.showInputDialog(" Escribe tu nombre por favor ");
+        JOptionPane.showMessageDialog(null, " Mucho gusto " + nombre + " Tenemos varias opciones y estamos trabajando en muchas más! ");
         String[] op = {"1. Triqui", "2. Punto y fama", "3. Funciones trigonométricas", "4. Clave de un número", "5. Salir"};
-        menu = (String) JOptionPane.showInputDialog(null, "¿A qué opción del menú deseas acceder " + nombre + "?", "Menú iterativo", JOptionPane.QUESTION_MESSAGE, null, op, null);
+        menu = (String) JOptionPane.showInputDialog(null, "¿A qué opción del menú desea acceder?", "Menú iterativo", JOptionPane.QUESTION_MESSAGE, null, op, null);
         while (menu != ("5. Salir")) {
             if (menu.toString().equalsIgnoreCase("1. Triqui")) {
+                JOptionPane.showMessageDialog(null, "Bienvenido a Triqui", "Triqui", JOptionPane.INFORMATION_MESSAGE);
                 tutal = JOptionPane.showConfirmDialog(null, "¿Quiéres abrir el tutorial?", "Triqui", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (tutal == JOptionPane.YES_OPTION) {
                     JOptionPane.showMessageDialog(null, "Las casillas están ordenadas de la siguiente manera: \n"
@@ -69,22 +34,515 @@ public class Lab_Final_GiulianoFrieri_DavidTache {
                 nn1 = JOptionPane.showInputDialog(null, "Nombre del jugador 1: ", "Triqui", JOptionPane.QUESTION_MESSAGE);
                 nn2 = JOptionPane.showInputDialog(null, "Nombre del jugador 2: ", "Triqui", JOptionPane.QUESTION_MESSAGE);
                 JOptionPane.showMessageDialog(null, "¿Todo listo?...Turno de " + nn1);
-                posp1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Elije la casilla.\n(solo números)"));
-                int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0, c9 = 0;
-                String s1, s2, s3, s4, s5, s6, s7, s8, s9;
+                int end = 0;
                 do {
-                    JOptionPane.showMessageDialog(null, "Digite un valor válido", "Triqui", JOptionPane.ERROR_MESSAGE);
-                    posp1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Elije la casilla."));
-                } while (posp1 > 9 || posp1 < 1);
+                    int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0, c9 = 0, turn = 1, res = 0, r = 0, win = 0;
+                    String s1 = null, s2 = null, s3 = null, s4 = null, s5 = null, s6 = null, s7 = null, s8 = null, s9 = null;
+                    while (turn <= 9 && win == 0) {
+                        if (c1 == 0) {
+                            s1 = "-";
+                        }
+                        if (c1 == 1) {
+                            s1 = "O";
+                        }
+                        if (c1 == 2) {
+                            s1 = "X";
+                        }
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Opción aún no terminada");
+                        if (c2 == 0) {
+                            s2 = "-";
+                        }
+                        if (c2 == 1) {
+                            s2 = "O";
+                        }
+                        if (c2 == 2) {
+                            s2 = "X";
+                        }
+
+                        if (c3 == 0) {
+                            s3 = "-";
+                        }
+                        if (c3 == 1) {
+                            s3 = "O";
+                        }
+                        if (c3 == 2) {
+                            s3 = "X";
+                        }
+
+                        if (c4 == 0) {
+                            s4 = "-";
+                        }
+                        if (c4 == 1) {
+                            s4 = "O";
+                        }
+                        if (c4 == 2) {
+                            s4 = "X";
+                        }
+
+                        if (c5 == 0) {
+                            s5 = "-";
+                        }
+                        if (c5 == 1) {
+                            s5 = "O";
+                        }
+                        if (c5 == 2) {
+                            s5 = "X";
+                        }
+
+                        if (c6 == 0) {
+                            s6 = "-";
+                        }
+                        if (c6 == 1) {
+                            s6 = "O";
+                        }
+                        if (c6 == 2) {
+                            s6 = "X";
+                        }
+
+                        if (c7 == 0) {
+                            s7 = "-";
+                        }
+                        if (c7 == 1) {
+                            s7 = "O";
+                        }
+                        if (c7 == 2) {
+                            s7 = "X";
+                        }
+
+                        if (c8 == 0) {
+                            s8 = "-";
+                        }
+                        if (c8 == 1) {
+                            s8 = "O";
+                        }
+                        if (c8 == 2) {
+                            s8 = "X";
+                        }
+
+                        if (c9 == 0) {
+                            s9 = "-";
+                        }
+                        if (c9 == 1) {
+                            s9 = "O";
+                        }
+                        if (c9 == 2) {
+                            s9 = "X";
+                        }
+
+                        if (win == 0 && turn <= 9) {
+                            do {
+                                res = Integer.parseInt(JOptionPane.showInputDialog(null, nn1 + " selecciona una casilla:  \n"
+                                        + ""
+                                        + "            " + s1 + " | " + s2 + " | " + s3 + "       \n"
+                                        + "            " + s4 + " | " + s5 + " | " + s6 + "       \n"
+                                        + "            " + s7 + " | " + s8 + " | " + s9 + "", "TRIQUI", JOptionPane.INFORMATION_MESSAGE));
+                                if (res < 1 || res > 9) {
+                                    JOptionPane.showMessageDialog(null, "Digita un número válido.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                }
+
+                                if (res == 1) {
+                                    if (c1 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c1 == 0) {
+                                        c1 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 2) {
+                                    if (c2 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c2 == 0) {
+                                        c2 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 3) {
+                                    if (c3 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c3 == 0) {
+                                        c3 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 4) {
+                                    if (c4 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c4 == 0) {
+                                        c4 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 5) {
+                                    if (c5 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c5 == 0) {
+                                        c5 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 6) {
+                                    if (c6 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c6 == 0) {
+                                        c6 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 7) {
+                                    if (c7 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c7 == 0) {
+                                        c7 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 8) {
+                                    if (c8 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c8 == 0) {
+                                        c8 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 9) {
+                                    if (c9 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c9 == 0) {
+                                        c9 = 1;
+                                        r = 1;
+                                    }
+                                }
+
+                            } while (r == 0);
+
+                            turn = turn + 1;
+                            r = 0;
+
+                            if (c1 == 0) {
+                                s1 = "-";
+                            }
+                            if (c1 == 1) {
+                                s1 = "O";
+                            }
+                            if (c1 == 2) {
+                                s1 = "X";
+                            }
+
+                            if (c2 == 0) {
+                                s2 = "-";
+                            }
+                            if (c2 == 1) {
+                                s2 = "O";
+                            }
+                            if (c2 == 2) {
+                                s2 = "X";
+                            }
+
+                            if (c3 == 0) {
+                                s3 = "-";
+                            }
+                            if (c3 == 1) {
+                                s3 = "O";
+                            }
+                            if (c3 == 2) {
+                                s3 = "X";
+                            }
+
+                            if (c4 == 0) {
+                                s4 = "-";
+                            }
+                            if (c4 == 1) {
+                                s4 = "O";
+                            }
+                            if (c4 == 2) {
+                                s4 = "X";
+                            }
+
+                            if (c5 == 0) {
+                                s5 = "-";
+                            }
+                            if (c5 == 1) {
+                                s5 = "O";
+                            }
+                            if (c5 == 2) {
+                                s5 = "X";
+                            }
+
+                            if (c6 == 0) {
+                                s6 = "-";
+                            }
+                            if (c6 == 1) {
+                                s6 = "O";
+                            }
+                            if (c6 == 2) {
+                                s6 = "X";
+                            }
+
+                            if (c7 == 0) {
+                                s7 = "-";
+                            }
+                            if (c7 == 1) {
+                                s7 = "O";
+                            }
+                            if (c7 == 2) {
+                                s7 = "X";
+                            }
+
+                            if (c8 == 0) {
+                                s8 = "-";
+                            }
+                            if (c8 == 1) {
+                                s8 = "O";
+                            }
+                            if (c8 == 2) {
+                                s8 = "X";
+                            }
+
+                            if (c9 == 0) {
+                                s9 = "-";
+                            }
+                            if (c9 == 1) {
+                                s9 = "O";
+                            }
+                            if (c9 == 2) {
+                                s9 = "X";
+                            }
+
+                        }
+
+                        if (c1 == 1 && c2 == 1 && c3 == 1) {
+                            win = 1;
+                        }
+                        if (c4 == 1 && c5 == 1 && c6 == 1) {
+                            win = 1;
+                        }
+                        if (c7 == 1 && c8 == 1 && c9 == 1) {
+                            win = 1;
+                        }
+
+                        if (c1 == 1 && c4 == 1 && c7 == 1) {
+                            win = 1;
+                        }
+                        if (c2 == 1 && c5 == 1 && c8 == 1) {
+                            win = 1;
+                        }
+                        if (c3 == 1 && c6 == 1 && c9 == 1) {
+                            win = 1;
+                        }
+
+                        if (c1 == 1 && c5 == 1 && c9 == 1) {
+                            win = 1;
+                        }
+                        if (c7 == 1 && c5 == 1 && c3 == 1) {
+                            win = 1;
+                        }
+
+                        if (turn <= 9 && win == 0) {
+                            do {
+                                res = Integer.parseInt(JOptionPane.showInputDialog(null, nn2 + " selecciona una casilla:  \n"
+                                        + ""
+                                        + "            " + s1 + " | " + s2 + " | " + s3 + "       \n"
+                                        + "            " + s4 + " | " + s5 + " | " + s6 + "       \n"
+                                        + "            " + s7 + " | " + s8 + " | " + s9 + "", "TRIQUI", JOptionPane.INFORMATION_MESSAGE));
+                                if (res < 1 || res > 9) {
+                                    JOptionPane.showMessageDialog(null, "Digita un número válido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                }
+
+                                if (res == 1) {
+                                    if (c1 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c1 == 0) {
+                                        c1 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 2) {
+                                    if (c2 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c2 == 0) {
+                                        c2 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 3) {
+                                    if (c3 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c3 == 0) {
+                                        c3 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 4) {
+                                    if (c4 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c4 == 0) {
+                                        c4 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 5) {
+                                    if (c5 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c5 == 0) {
+                                        c5 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 6) {
+                                    if (c6 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c6 == 0) {
+                                        c6 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 7) {
+                                    if (c7 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c7 == 0) {
+                                        c7 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 8) {
+                                    if (c8 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c8 == 0) {
+                                        c8 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                                if (res == 9) {
+                                    if (c9 > 0) {
+                                        JOptionPane.showMessageDialog(null, "Casilla llena", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                    }
+                                    if (c9 == 0) {
+                                        c9 = 2;
+                                        r = 1;
+                                    }
+                                }
+
+                            } while (r == 0);
+                            r = 0;
+                            turn = turn + 1;
+
+                        }
+                        if (c1 == 2 && c2 == 2 && c3 == 2) {
+                            win = 2;
+                        }
+                        if (c4 == 2 && c5 == 2 && c6 == 2) {
+                            win = 2;
+                        }
+                        if (c7 == 2 && c8 == 2 && c9 == 2) {
+                            win = 2;
+                        }
+
+                        if (c1 == 2 && c4 == 2 && c7 == 2) {
+                            win = 2;
+                        }
+                        if (c2 == 2 && c5 == 2 && c8 == 2) {
+                            win = 2;
+                        }
+                        if (c3 == 2 && c6 == 2 && c9 == 2) {
+                            win = 2;
+                        }
+
+                        if (c1 == 2 && c5 == 2 && c9 == 2) {
+                            win = 2;
+                        }
+                        if (c7 == 2 && c5 == 2 && c3 == 2) {
+                            win = 2;
+                        }
+
+                    }
+
+                    if (win == 1) {
+                        JOptionPane.showMessageDialog(null, nn1 + " ganó!", "TRIQUI", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    if (win == 2) {
+                        JOptionPane.showMessageDialog(null, nn2 + " ganó!", "TRIQUI", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    if (win == 0) {
+                        JOptionPane.showMessageDialog(null, "Empate... sin ganadores", "TRIQUI", JOptionPane.INFORMATION_MESSAGE);
+                    }
+
+                    int sino = 0;
+                    sino = JOptionPane.showConfirmDialog(null, "¿Desea seguir jugando?", "TRIQUI", sino, JOptionPane.YES_NO_OPTION);
+                    if (sino == JOptionPane.YES_OPTION) {
+                    }
+
+                    if (sino == JOptionPane.NO_OPTION) {
+                        end = 1;
+                    }
+                } while (end == 0);
+
+            }
+            if (menu.toString().equalsIgnoreCase("2. Punto y fama")) {
+
+            }
+            if (menu.toString().equalsIgnoreCase("3. Funciones trigonométricas")) {
+
+            }
+            if (menu.toString().equalsIgnoreCase("4. Clave de un número")) {
+                int N, mod, div, i = 2, c, sum = 0, result;
+                JOptionPane.showMessageDialog(null, "Bienvenido a la Clave de un número", "Clave de un número", JOptionPane.INFORMATION_MESSAGE);
+                N = Integer.parseInt(JOptionPane.showInputDialog(null, "Escriba un número."));
+                if (N < 0) {
+                    result = -1;
+                    JOptionPane.showMessageDialog(null, "La Clave del número es:" + result);
+                } else {
+                    mod = N % 10;
+                    div = N / 10;
+                    while (mod != 0) {
+                        c = mod * i;
+                        mod = div % 10;
+                        div = div / 10;
+                        sum = sum + c;
+                        i++;
+                    }
+                    result = sum % 10;
+                    JOptionPane.showMessageDialog(null, "La Clave del número es: " + result);
+                }
             }
             menu = (String) JOptionPane.showInputDialog(null, "¿A qué opción del menú deseas acceder " + nombre + "?", "Menú iterativo", JOptionPane.QUESTION_MESSAGE, null, op, null);
         }
 
-        JOptionPane.showMessageDialog(null, "Gracias por utilizar este programa " + nombre + " Hasta pronto! ");
+        JOptionPane.showMessageDialog(null, "Gracias por utilizar nuestro programa " + nombre + " Hasta pronto! ");
 
     }
 }
+
     
